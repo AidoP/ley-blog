@@ -16,7 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: git fetch origin pages
+      with:
+        ref: main
+        path: main
+    - uses: actions/checkout@v2
+      with:
+        ref: pages
+        path: pages
     - name: Install Rust Nightly
       uses: actions-rs/toolchain@v1
       with:
@@ -26,20 +32,14 @@ jobs:
     - name: Install Ley
       run: cargo install ley
     - name: Build Ley Files
-      run: ley src/
-    - name: Save changes
-      run: git add '*.html' && git stash
-    - name: Show what is going on
-      run: git status
-    - name: Change branch to pages
-      run: git checkout pages
-    - name: Revert to first base pages commit
-      run: rm *.html
-    - name: Restore Changes
-      run: git stash pop
-    - name: Commit and Push
-      run: |
-          git config user.name 'Ley Builder'
-          git config user.email 'aidop@me.com'
-          git commit -m "Automatically built Ley files"
-          git push
+      run: ley main/src/ pages/
+    - name: Commit Changes
+      uses: EndBug/add-and-commit@v5
+      with:
+          cwd: "pages"
+          author_name: "Ley Builder"
+          author_email: "aidop@me.com"
+          message: "Auto-built Ley files"
+          add: "*.html"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

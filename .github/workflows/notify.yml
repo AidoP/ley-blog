@@ -1,0 +1,17 @@
+name: Notify
+on:
+    push:
+        branches:
+            - pages
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Notify Pages Repo
+        uses: AidoP/dispatch-action@v1
+        with:
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          owner: "AidoP"
+          repo: "AidoP.github.io"
+          event: blog

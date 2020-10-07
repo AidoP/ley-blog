@@ -38,5 +38,6 @@ jobs:
           cd pages
           git config user.name "Ley Builder"
           git config user.email "aidop@me.com"
+          git add "*.html"
           git commit -m "Auto-built Ley files"
           git push

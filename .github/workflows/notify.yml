@@ -9,9 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Notify Pages Repo
-        uses: AidoP/dispatch-action@v2
+        uses: actions/github-script@v3
         with:
-          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
-          owner: "AidoP"
-          repo: "AidoP.github.io"
-          event: blog
+          github-token: ${{secrets.REPO_DISPATCH_TOKEN}}
+          script: |
+              github.repos.createDispatchEvent({owner: "AidoP", repo: "AidoP.github.io", event_type: "blog"})

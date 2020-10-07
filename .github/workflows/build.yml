@@ -34,10 +34,10 @@ jobs:
     - name: Change branch to pages
       run: git checkout pages
     - name: Revert to first base pages commit
-      run: git reset --hard 545bca0
+      run: rm *.html
     - name: Restore Changes
       run: git stash pop
-    - name: Set git credentials
+    - name: Commit and Push
       run: |
           git config user.name 'Ley Builder'
           git config user.email 'aidop@me.com'

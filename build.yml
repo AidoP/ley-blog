@@ -1,0 +1,30 @@
+name: Rust
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Ley
+      run: cargo install ley
+    - name: Build Ley Files
+      run: ley src/ build/
+    - name: Upload Built Ley
+      uses: EndBug/add-and-commit@v5
+      with:
+        add: 'build'
+        author_name: Auto 
+        message: 'Automatically built Ley files'
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

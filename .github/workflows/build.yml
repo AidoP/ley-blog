@@ -34,12 +34,9 @@ jobs:
     - name: Build Ley Files
       run: ley main/src/ pages/
     - name: Commit Changes
-      uses: EndBug/add-and-commit@v5
-      with:
-          cwd: "pages"
-          author_name: "Ley Builder"
-          author_email: "aidop@me.com"
-          message: "Auto-built Ley files"
-          add: "*.html"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+          cd pages
+          git config user.name "Ley Builder"
+          git config user.email "aidop@me.com"
+          git commit -m "Auto-built Ley files"
+          git push

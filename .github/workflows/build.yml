@@ -28,7 +28,7 @@ jobs:
     - name: Build Ley Files
       run: ley src/
     - name: Move to pages branch
-      run: git stash push . && git checkout pages && git stash pop
+      run: git stash && git reset --hard && git checkout pages && git stash pop
     - name: Upload Built Ley
       uses: EndBug/add-and-commit@v5
       with:

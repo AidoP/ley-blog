@@ -1,8 +1,7 @@
 name: Notify
 on:
-    push:
-        branches:
-            - pages
+  push:
+    branches: [pages]
 jobs:
   build:
     runs-on: ubuntu-latest

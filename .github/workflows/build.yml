@@ -30,6 +30,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: pages
+        clean: false
     - name: Upload Built Ley
       uses: EndBug/add-and-commit@v5
       with:

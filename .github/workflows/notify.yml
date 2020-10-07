@@ -13,4 +13,4 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-              github.repos.createDispatchEvent({owner: "AidoP", repo: "AidoP.github.io", event_type: "blog"})
+              github.actions.createWorkflowDispatch({owner: "AidoP", repo: "AidoP.github.io", workflow_id: "update.yml", ref: "master"})

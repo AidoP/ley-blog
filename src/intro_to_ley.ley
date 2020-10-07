@@ -1,0 +1,10 @@
+!title: meta {Introduction to Ley}
+!author: meta {AidoP}
+!date: meta {7th October 2020}
+
+!Introduction: {
+    
+}
+!Getting Ley: {
+    You can install Ley through ""cargo install ley""
+}

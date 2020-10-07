@@ -27,8 +27,14 @@ jobs:
       run: cargo install ley
     - name: Build Ley Files
       run: ley src/
-    - name: Move to pages branch
-      run: git stash && git reset --hard && git checkout pages && git stash pop
+    - name: Save changes
+      run: git stash
+    - name: Show what is going on
+      run: git status
+    - name: Change branch to pages
+      run: git checkout pages
+    - name: Restore Changes
+      run: git stash pop
     - name: Upload Built Ley
       uses: EndBug/add-and-commit@v5
       with:

@@ -41,3 +41,4 @@ jobs:
           git add "*.html"
           git commit -m "Auto-built Ley files"
           git push
+      continue-on-error: true

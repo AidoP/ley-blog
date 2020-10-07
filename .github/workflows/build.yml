@@ -29,8 +29,9 @@ jobs:
     - name: Upload Built Ley
       uses: EndBug/add-and-commit@v5
       with:
-        add: '.'
-        author_name: Auto 
+        add: '*.html'
+        author_name: Auto
+        branch: pages
         message: 'Automatically built Ley files'
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

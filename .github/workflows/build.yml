@@ -21,11 +21,9 @@ jobs:
       with:
           profile: minimal
           toolchain: nightly
+          override: true
     - name: Install Ley
-      uses: actions-rs/cargo@v1
-      with: 
-        command: install
-        args: ley
+      run: cargo install ley
     - name: Build Ley Files
       run: ley src/ build/
     - name: Upload Built Ley

@@ -26,8 +26,10 @@ jobs:
       run: cargo install ley
     - name: Build Ley Files
       run: ley src/
-    - name: Commit strategy rebase
-      run: git config pull.ff only
+    - name: Move to pages branch
+      uses: actions/checkout@v2
+      with:
+        ref: pages
     - name: Upload Built Ley
       uses: EndBug/add-and-commit@v5
       with:

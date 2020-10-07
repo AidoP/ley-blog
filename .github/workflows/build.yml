@@ -28,7 +28,7 @@ jobs:
     - name: Build Ley Files
       run: ley src/
     - name: Save changes
-      run: git stash
+      run: git add '*.html' && git stash
     - name: Show what is going on
       run: git status
     - name: Change branch to pages

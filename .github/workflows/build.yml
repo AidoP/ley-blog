@@ -37,12 +37,9 @@ jobs:
       run: git reset --hard 545bca0
     - name: Restore Changes
       run: git stash pop
-    - name: Upload Built Ley
-      uses: EndBug/add-and-commit@v5
-      with:
-        add: '*.html'
-        author_name: 'Ley Builder'
-        branch: pages
-        message: 'Automatically built Ley files'
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+    - name: Set git credentials
+      run: |
+          git config user.name 'Ley Builder'
+          git config user.email 'aidop@me.com'
+          git commit -m "Automatically built Ley files"
+          git push

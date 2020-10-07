@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - run: git clone https://github.com/AidoP/blog
     - name: Install Rust Nightly
       uses: actions-rs/toolchain@v1
       with:
@@ -26,7 +26,6 @@ jobs:
       run: cargo install ley
     - name: Build Ley Files
       run: ley src/
-    - run: git branch
     - name: Move to pages branch
       run: git checkout pages
     - name: Upload Built Ley

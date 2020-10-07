@@ -27,10 +27,7 @@ jobs:
     - name: Build Ley Files
       run: ley src/
     - name: Move to pages branch
-      uses: actions/checkout@v2
-      with:
-        ref: pages
-        clean: false
+      run: git checkout pages
     - name: Upload Built Ley
       uses: EndBug/add-and-commit@v5
       with:

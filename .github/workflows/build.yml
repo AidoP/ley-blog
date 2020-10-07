@@ -15,7 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: git clone https://github.com/AidoP/blog
+    - uses: actions/checkout@v2
+    - run: git fetch origin pages
     - name: Install Rust Nightly
       uses: actions-rs/toolchain@v1
       with:

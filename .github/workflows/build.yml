@@ -34,7 +34,7 @@ jobs:
     - name: Change branch to pages
       run: git checkout pages
     - name: Remove old pages
-      run: rm "*.html"
+      run: rm *.html
     - name: Restore Changes
       run: git stash pop
     - name: Upload Built Ley

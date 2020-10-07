@@ -1,4 +1,4 @@
-name: Rust
+name: Ley
 
 on:
   push:
@@ -16,8 +16,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Install Rust Nightly
+      uses: actions-rs/toolchain@v1
+      with:
+          profile: minimal
+          toolchain: nightly
     - name: Install Ley
-      run: cargo install ley
+      uses: actions-rs/cargo@v1
+      with: 
+        command: install
+        args: ley
     - name: Build Ley Files
       run: ley src/ build/
     - name: Upload Built Ley

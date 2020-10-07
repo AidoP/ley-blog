@@ -30,7 +30,7 @@ jobs:
       uses: EndBug/add-and-commit@v5
       with:
         add: '*.html'
-        author_name: Auto
+        author_name: 'Ley Builder'
         branch: pages
         message: 'Automatically built Ley files'
     env:

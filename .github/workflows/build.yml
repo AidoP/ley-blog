@@ -26,6 +26,7 @@ jobs:
       run: cargo install ley
     - name: Build Ley Files
       run: ley src/
+    - run: git branch
     - name: Move to pages branch
       run: git checkout pages
     - name: Upload Built Ley

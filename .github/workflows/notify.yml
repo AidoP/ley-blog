@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Notify Pages Repo
-        uses: AidoP/dispatch-action@v1
+        uses: AidoP/dispatch-action@v2
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           owner: "AidoP"

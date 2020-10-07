@@ -3,7 +3,8 @@
 !date: meta {7th October 2020}
 
 !Introduction: {
-    
+    Ley is a markup language focused on moving the writer away from formatting.
+    Ley lines describe functionality while all text ignores formatting of any kind.
 }
 !Getting Ley: {
     You can install Ley through ""cargo install ley""

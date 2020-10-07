@@ -26,6 +26,8 @@ jobs:
       run: cargo install ley
     - name: Build Ley Files
       run: ley src/
+    - name: Commit strategy rebase
+      run: git config pull.ff only
     - name: Upload Built Ley
       uses: EndBug/add-and-commit@v5
       with:

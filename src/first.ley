@@ -4,7 +4,5 @@
 
 !Welcome: {
     This blog is powered using Ley, a markup language designed to format pages correctly all the time. The source is available !"https://gitub.com/AidoP/blog": link {here}.
-}
-!Setting up a blog like this: {
-    See "".github/workflows""
+    If you want to make a blog powered by your markup or templating language of choice that automatically builds to public branch, see !"github_actions_blog.html": link {Making a blog powered by GitHub Actions & Pages}.
 }

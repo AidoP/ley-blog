@@ -32,7 +32,7 @@ jobs:
     - name: Install Ley
       run: cargo install ley
     - name: Build Ley Files
-      run: ley --style '/blog.css' main/src/ pages/
+      run: ley --index --style '/blog.css' main/src/ pages/
     - name: Commit Changes
       run: |
           cd pages

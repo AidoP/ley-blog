@@ -3,7 +3,7 @@
 !date: meta {8th October 2020}
 
 !Choose a Language: {
-    A shiny blog needs some shiny tech!
+    A shiny blog needs some shiny "tech!"
     The first thing you need is a templating or markup language that can generate nice looking web pages from simpler descriptions.
     You could write the html directly, but that would be tedious.
     I'm using Ley, a parser and generator I wrote to fit my own needs and desires, but Markdown is a great alternative that you probably already know.
